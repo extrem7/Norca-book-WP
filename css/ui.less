@@ -1,0 +1,52 @@
+@red: #cc2431;
+@dark: #313131;
+@gray: #f2f2f2;
+.size(@w, @h: @w) {
+  height: @h;
+  width: @w;
+}
+
+.transition(@e) {
+  transition: @e .3s ease-in-out;
+}
+
+body, html {
+  cursor: default;
+  overflow-x: hidden;
+  width: 100vw;
+  max-width: 100%;
+  font-family: LetoSans;
+  color: @dark;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.columns {
+  position: relative;
+  &:before {
+    content: '';
+    .size(8px, 16px);
+    background-image: url("../images/red-columns.png");
+    position: absolute;
+    top: -30px;
+    left: 3px;
+  }
+  &-center:before {
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+  }
+}
+
+.title {
+  font-size: 50px;
+  line-height: 89px;
+}
+
+.cbalink {
+  display: none !important;
+}

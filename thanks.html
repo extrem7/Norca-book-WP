@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Template</title>
+    <link href="css/style.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<header>
+    <div class="container">
+        <div class="logo col-lg-1 col-sm-2"><a href=""><img src="images/header-logo.png" alt="logo"></a></div>
+        <div class="menu col-lg-6 col-md-7 col-sm-10">
+            <ul>
+                <li><a href="#about">О книге</a></li>
+                <li><a href="#how">Главы книги</a></li>
+                <li><a href="#author">Автор</a></li>
+                <li><a href="#bonus">Бонус</a></li>
+                <li><a href="#testimonials">Отзывы</a></li>
+            </ul>
+        </div>
+        <div class="callbacks col-sm-12">
+            <a data-target="#modal-buy" data-toggle="modal" class="btn buy">Купить сечас</a>
+            <a data-target="#modal-ask" data-toggle="modal" class="btn question">Задать вопрос автору</a>
+        </div>
+    </div>
+</header>
+<section class="thanks">
+    <div class="container">
+        <div class="col-md-5 col-md-offset-6 col-sm-8 col-sm-offset-4">
+            <h2 class="title">СПАСИБО!</h2>
+            <p>МЫ СВЯЖИМСЯ С ВАМИ В БЛИЖАЙШЕЕ ВРЕМЯ.</p>
+            <a href="index.html" class="btn">ВЕРНУТЬСЯ НА САЙТ</a>
+        </div>
+    </div>
+</section>
+<div id="modal-ask" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <div class="modal-body">
+                <h2 class="title columns columns-center">Остались вопросы?</h2>
+                <p>Напишите нам и мы свяжемся с вами в ближайшее время.</p>
+                <div class="form">
+                    <div class="input name"><input placeholder="Ваше имя"></div>
+                    <div class="input mail"><input type="email" placeholder="Ваша  почта"></div>
+                    <textarea placeholder="Ваше сообщение"></textarea>
+                    <input type="submit" value="отправить">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="modal-buy" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <div class="modal-content">
+            <div class="modal-body">
+                <h2 class="title columns columns-center">Заказать книгу прямо сейчас</h2>
+                <p class="middle">Заказывайте книгу на любой из представленных площадок</p>
+                <div class="col-md-3 col-md-offset-0 col-sm-5 col-sm-offset-1">
+                    <div class="item">
+                        <a href="" class="btn"><img src="images/bag-icon.png" alt="">Купить</a>
+                        <img src="images/order-ozon.png" alt="ozon">
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-5">
+                    <div class="item">
+                        <a href="" class="btn"><img src="images/bag-icon.png" alt="">Купить</a>
+                        <img src="images/order-litres.png" alt="ozon">
+                    </div>
+                </div>
+                <div class="col-md-3 col-md-offset-0 col-sm-5 col-sm-offset-1">
+                    <div class="item">
+                        <a href="" class="btn"><img src="images/bag-icon.png" alt="">Купить</a>
+                        <img src="images/order-ozon.png" alt="ozon">
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-5">
+                    <div class="item">
+                        <a href="" class="btn"><img src="images/bag-icon.png" alt="">Купить</a>
+                        <img src="images/order-litres.png" alt="ozon">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
