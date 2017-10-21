@@ -39,7 +39,7 @@
 <div class="mobile-menu">
 	<?php wp_nav_menu( array( 'menu' => 'Меню' ) ); ?>
 </div>
-<header>
+<header class="navbar-fixed-top">
     <div class="container">
         <div class="logo col-lg-1 col-sm-2"><a href="<? bloginfo( 'url' ) ?>">
                 <img src="<? echo get_field( 'лого', 17 )['url'] ?>"

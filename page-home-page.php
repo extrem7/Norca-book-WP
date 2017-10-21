@@ -14,16 +14,16 @@
                 <div class="left">
                     <p><? the_field( 'соц-сети-текст' ) ?></p>
                     <div class="links">
-                        <a href="<? the_field( 'cсылка-инстраграм' ) ?>"></a>
-                        <a href="<? the_field( 'cсылка-твиттер' ) ?>"></a>
-                        <a href="<? the_field( 'cсылка-фейсбук' ) ?>"></a>
-                        <a href="<? the_field( 'cсылка-vk' ) ?>"></a>
-                        <a href="<? the_field( 'cсылка-linkedin' ) ?>"></a>
+                        <a href="<? the_field( 'cсылка-инстраграм' ) ?>" target="_blank"></a>
+                        <a href="<? the_field( 'cсылка-твиттер' ) ?>" target="_blank"></a>
+                        <a href="<? the_field( 'cсылка-фейсбук' ) ?>" target="_blank"></a>
+                        <a href="<? the_field( 'cсылка-vk' ) ?>" target="_blank"></a>
+                        <a href="<? the_field( 'cсылка-linkedin' ) ?>" target="_blank"></a>
                     </div>
                 </div>
                 <div class="right">
                     <p><? the_field( 'cайт-автора' ) ?></p>
-                    <a href="<? the_field( 'cайт-автора-ссылка' ) ?>"><? the_field( 'cайт-автора-ссылка' ) ?></a>
+                    <a href="<? the_field( 'cайт-автора-ссылка' ) ?>" class="btn"><? the_field( 'cайт-автора-кнопка' ) ?></a>
                 </div>
             </div>
         </div>
@@ -35,28 +35,28 @@
         <p class="middle"><? the_field( 'заказать-текст' ) ?></p>
         <div class="col-md-3 col-md-offset-0 col-sm-5 col-sm-offset-1">
             <div class="item">
-                <a href="<? the_field( 'магазин-1-ссылка' ) ?>" class="btn">
+                <a href="<? the_field( 'магазин-1-ссылка' ) ?>" target="_blank" class="btn">
                     <img <? the_image( 'заказать-иконка' ) ?>><? the_field( 'заказать-кнопка' ) ?></a>
                 <img <? the_image( 'магазин-1-картинка' ) ?>>
             </div>
         </div>
         <div class="col-md-3 col-sm-5">
             <div class="item">
-                <a href="<? the_field( 'магазин-2-ссылка' ) ?>" class="btn">
+                <a href="<? the_field( 'магазин-2-ссылка' ) ?>" target="_blank" class="btn">
                     <img <? the_image( 'заказать-иконка' ) ?>><? the_field( 'заказать-кнопка' ) ?></a>
                 <img <? the_image( 'магазин-2-картинка' ) ?>>
             </div>
         </div>
         <div class="col-md-3 col-md-offset-0 col-sm-5 col-sm-offset-1">
             <div class="item">
-                <a href="<? the_field( 'магазин-3-ссылка' ) ?>" class="btn">
+                <a href="<? the_field( 'магазин-3-ссылка' ) ?>" target="_blank" class="btn">
                     <img <? the_image( 'заказать-иконка' ) ?>><? the_field( 'заказать-кнопка' ) ?></a>
                 <img <? the_image( 'магазин-3-картинка' ) ?>>
             </div>
         </div>
         <div class="col-md-3 col-sm-5">
             <div class="item">
-                <a href="<? the_field( 'магазин-4-ссылка' ) ?>" class="btn">
+                <a href="<? the_field( 'магазин-4-ссылка' ) ?>" target="_blank" class="btn">
                     <img <? the_image( 'заказать-иконка' ) ?>><? the_field( 'заказать-кнопка' ) ?></a>
                 <img <? the_image( 'магазин-4-картинка' ) ?>>
             </div>
@@ -70,7 +70,7 @@
             <p class="middle"><? the_field( 'о-книге-текст' ) ?></p>
             <div class="text"><p><? the_field( 'о_книге_текст_со_скроллом' ) ?></p>
             </div>
-            <button data-target="#modal-buy" data-toggle="modal"><? the_field( 'о_книге_кнопка' ) ?></button>
+            <!--<button data-target="#modal-buy" data-toggle="modal"><? the_field( 'о_книге_кнопка' ) ?></button>-->
         </div>
         <div class="col-md-6"><img <? the_image( 'о_книге_картинка' ) ?> class="book"></div>
     </div>
@@ -112,22 +112,17 @@
 </section>
 <section class="access">
     <div class="container">
-        <div class="col-sm-6">
-            <h2 class="title columns"><? the_field( 'доступ_заголовок' ) ?></h2>
-			<? echo do_shortcode( '[contact-form-7 id="108" title="Доступ" html_class="form"]' ) ?>
-        </div>
-        <div class="tablet-container col-sm-6"><img <? the_image( 'доступ_планшет' ) ?> class="tablet">
-            <p class="tablet-text"><? the_field( 'доступ_планшет_текст' ) ?></p>
-            <a href="#" data-target="#modal-page" data-toggle="modal">
-                <img <? the_image( 'доступ_планшет_иконка' ) ?>><? the_field( 'доступ_планшет_кнопка' ) ?></a>
-        </div>
+            <h2 class="title"><? the_field( 'доступ_заголовок' ) ?></h2>
+        <img <? the_image('доступ_иконка') ?>>
+        <!--<button class="btn">ПОЛУЧИТЬ ДОСТУП</button>-->
+        <button sp-show-form="84638" class="btn"><? the_field( 'доступ_кнопка' ) ?></button>
     </div>
 </section>
 <section id="bonus" class="bonus">
     <div class="container">
         <h2 class="title columns columns-center"><? the_field( 'бонус_заголовок' ) ?></h2>
-        <p class="small"><? the_field( 'бонус_текст' ) ?></p>
-        <p class="middle"><? the_field( 'бонус_текст_2' ) ?></p>
+        <p class="middle"><? the_field( 'бонус_текст' ) ?></p>
+        <p class="small"><? the_field( 'бонус_текст_2' ) ?></p>
         <div class="row">
             <div class="col-md-3 col-md-offset-0 col-sm-5 col-sm-offset-1">
                 <div class="item">
@@ -181,8 +176,10 @@
                     </div>
                     <p><? the_field( 'бонус_3_текст' ) ?></p>
                     <img <? the_image( 'бонус_3_картинка-подарка' ) ?> class="bonus-icon">
-                    <a data-target="#modal-bonus" data-toggle="modal"
+                    <!--<a data-target="#modal-bonus" data-toggle="modal"
                        class="btn btn-bonus"><? the_field( 'бонус_3_кнопка' ) ?></a>
+                    <hr>-->
+                    <button sp-show-form="84636" class="btn btn-bonus"><? the_field( 'бонус_3_кнопка' ) ?></button>
                 </div>
             </div>
             <div class="col-md-3 col-sm-5">
@@ -202,6 +199,7 @@
     <div class="container">
         <div class="col-lg-6 col-md-7">
             <h2 class="title columns"><? the_field( 'автор_заголовок' ) ?></h2>
+            <img src="<? path() ?>images/author-man.png" alt="" class="author-man">
             <div class="text"><p><? the_field( 'автор_текст' ) ?></p>
             </div>
             <div class="buttons">

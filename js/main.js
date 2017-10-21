@@ -114,10 +114,32 @@ const book = {
                 });
             }
         }
+    },
+    upButton = {
+        status: 0,
+        can: 0,
+        btn: '.scroll-up',
+        controller: function () {
+            $(upButton.btn).click(function () {
+                $('html,body').animate({
+                    scrollTop: 0
+                }, {
+                    duration: 1250
+                });
+            });
+            $(window).scroll(function () {
+                if ($(document).scrollTop() > $('.bonus').offset().top-200) {
+                    $('.scroll-up').fadeIn();
+                } else {
+                    $('.scroll-up').fadeOut();
+                }
+            });
+        }
     };
 $(function () {
     header.controller();
     book.controller();
+    upButton.controller();
     orderCopy();
     $('.testimonials button').click(function () {
         let e = this;

@@ -10,7 +10,7 @@
   outline: 0;
   width: 50px;
   display: none;
-  position: absolute;
+  position: fixed;
   top: 20px;
   right: 25px;
   .icon-bar {
@@ -31,7 +31,8 @@
 }
 
 header {
-  padding: 50px 0;
+  padding: 10px 0;
+  background-color: #252323;
   position: absolute;
   left: 0;
   right: 0;
@@ -154,14 +155,25 @@ header {
     }
   }
   .right {
+    display: flex;
+    align-items: center;
     p {
       color: white;
       font-size: 16px;
       font-weight: 400;
       line-height: 28px;
+      margin-bottom: 0;
     }
     a {
+      height: 23px;
+      line-height: 11px;
       transition: color .3s;
+      padding: 5px 13px;
+      background-color: @red;
+      color: white;
+      font-family: Roboto;
+      font-size: 16px;
+      margin-left: 15px;
       &:hover {
         color: white;
       }
@@ -224,8 +236,8 @@ header {
     line-height: 30px;
   }
   .text {
-    height: 250px;
-    overflow-y: scroll;
+    //height: 250px;
+    //overflow-y: scroll;
     direction: rtl;
     position: relative;
     left: -15px;
@@ -237,7 +249,7 @@ header {
       line-height: 28px;
       direction: ltr;
     }
-    &::-webkit-scrollbar-track {
+    /*&::-webkit-scrollbar-track {
       background-color: #e3e3e3;
     }
     &::-webkit-scrollbar {
@@ -245,7 +257,7 @@ header {
     }
     &::-webkit-scrollbar-thumb {
       background-color: @red;
-    }
+    }*/
   }
   button {
     background-color: @red;
@@ -331,97 +343,27 @@ header {
   background: url('../images/access-background.png') no-repeat center;
   background-size: cover;
   color: white;
+  text-align: center;
   .title {
-    margin-top: 130px;
+    margin-top: 0;
     line-height: 55px;
   }
-  .form {
-    max-width: 390px;
-    margin-top: 40px;
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    .input {
-      position: relative;
-      &:before {
-        content: '';
-        .size(20px, 14px);
-        background-image: url('../images/mail-icon.png');
-        position: absolute;
-        left: 25px;
-        top: 25px;
-        cursor: text;
-        z-index: 2;
-      }
-      input {
-        width: 100%;
-        border-radius: 3px;
-        height: 62px;
-        font-family: Roboto;
-        font-size: 16px;
-        font-weight: 300;
-        text-indent: 60px;
-        color: @dark;
-        margin-bottom: 15px;
-        &::-webkit-input-placeholder {
-          color: @dark;
-        }
-        &::-moz-placeholder {
-          color: @dark;
-        }
-        &:-ms-input-placeholder {
-          color: @dark;
-        }
-      }
-    }
-    input[type=submit] {
-      height: 62px;
-      border-radius: 3px;
-      background-color: @red;
-      font-family: Roboto;
-      font-size: 16px;
-      font-weight: 300;
-    }
+  img {
+    margin: 20px auto 35px;
+    display: block;
   }
-  .tablet-container {
-    position: relative;
-    text-align: center;
-  }
-  .tablet-text {
-    color: #484646;
-    max-width: 340px;
-    font-size: 12px;
-    position: absolute;
-    top: 80px;
-    left: 115px;
-    z-index: 1;
-    text-align: justify;
-    display: flex;
-    flex-direction: column;
-    .center {
-      text-align: center;
-      font-size: 13px;
-    }
-  }
-  .tablet {
-    width: 100%;
-    max-width: image-width('../images/access-tablet.png');
-  }
-  a {
-    width: 200px;
-    border: 1px solid fade(white, 25%);
+  .btn {
+    width: 388px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: @red;
     border-radius: 3px;
-    font-size: 14px;
+    font-family: Roboto;
+    font-weight: 300;
+    font-size: 16px;
     text-transform: uppercase;
-    position: absolute;
-    top: 260px;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    padding: 20px;
-    z-index: 2;
-    img {
-      margin-right: 10px;
+    &:hover {
+      color: white;
     }
   }
 }
@@ -432,7 +374,8 @@ header {
   .small {
     font-size: 16px;
     font-weight: 100;
-    margin-top: 20px;
+    margin-top: 40px;
+    margin-bottom: 80px;
   }
   .middle {
     font-size: 20px;
@@ -440,7 +383,6 @@ header {
     line-height: 21px;
     text-transform: uppercase;
     margin-top: 40px;
-    margin-bottom: 80px;
   }
   .item {
     height: 510px;
@@ -516,30 +458,20 @@ header {
   .title {
     line-height: 55px;
   }
+  .author-man {
+    display: none;
+    max-width: 320px;
+    width: 100%;
+  }
   .text {
-    height: 250px;
-    overflow-y: scroll;
-    direction: rtl;
     position: relative;
-    left: -15px;
-    padding-left: 15px;
     color: #727070;
-    margin: 50px 0 40px;
+    margin: 15px 0 40px;
     p {
       font-family: Roboto;
       font-size: 16px;
       font-weight: 300;
       line-height: 28px;
-      direction: ltr;
-    }
-    &::-webkit-scrollbar-track {
-      background-color: #727070;
-    }
-    &::-webkit-scrollbar {
-      width: 2px;
-    }
-    &::-webkit-scrollbar-thumb {
-      background-color: @red;
     }
   }
   .buttons {
@@ -723,7 +655,7 @@ header {
   p {
     font-size: 18px;
     font-weight: 100;
-    line-height: 17px;
+    line-height: 24px;
     margin: 25px 0 35px;
   }
   .btn {
@@ -821,6 +753,18 @@ footer {
     position: relative;
     z-index: 2;
   }
+}
+
+.scroll-up {
+  background: url("../images/scroll-up.png") no-repeat center;
+  background-size: 100%;
+  width: 4vw;
+  height: 4vw;
+  position: fixed;
+  right: 3%;
+  bottom: 30px;
+  display: none;
+  cursor: pointer;
 }
 
 .modal .close {
@@ -1088,6 +1032,7 @@ footer {
 
 @media screen and (max-width: 991px) {
   header {
+    position: relative !important;
     .callbacks {
       flex-direction: row;
       float: right;
@@ -1181,6 +1126,10 @@ footer {
 
   .author {
     background-image: url("../images/author-background-plain.png");
+    .author-man {
+      display: block;
+      max-width: 400px;
+    }
   }
 
   .testimonials {
@@ -1205,6 +1154,10 @@ footer {
       font-size: 14px;
       padding: 15px 8px;
     }
+  }
+
+  .scroll-up {
+    .size(50px);
   }
 
   #modal-buy {
@@ -1255,8 +1208,8 @@ footer {
 
   header {
     text-align: center;
-    /*position: relative;
-    background-color: #1e1d1d;*/
+    position: relative !important;
+    //background-color: #1e1d1d;*/
     .menu {
       display: none;
     }
@@ -1364,16 +1317,8 @@ footer {
       line-height: 45px;
       text-align: center;
     }
-    .form {
-      margin: 25px auto;
-    }
-    .tablet {
-      width: 230px;
-    }
-    a {
-      width: 170px;
-      padding: 20px 0px;
-      top: 130px;
+    .btn {
+      width: 270px;
     }
   }
 
@@ -1420,6 +1365,9 @@ footer {
     .title {
       font-size: 35px;
       line-height: 45px;
+    }
+    .author-man {
+      margin: 15px auto;
     }
     .middle {
       font-size: 20px;

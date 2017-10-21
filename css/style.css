@@ -462,8 +462,7 @@ template {
 [hidden] {
   display: none;
 }
-body,
-html {
+body {
   cursor: default;
   overflow-x: hidden;
   width: 100vw;
@@ -507,7 +506,7 @@ html {
   outline: 0;
   width: 50px;
   display: none;
-  position: absolute;
+  position: fixed;
   top: 20px;
   right: 25px;
 }
@@ -526,7 +525,8 @@ html {
   display: none;
 }
 header {
-  padding: 50px 0;
+  padding: 10px 0;
+  background-color: #252323;
   position: absolute;
   left: 0;
   right: 0;
@@ -652,14 +652,27 @@ header .callbacks .question {
   width: 33px;
   margin-right: 0;
 }
+.main .right {
+  display: flex;
+  align-items: center;
+}
 .main .right p {
   color: white;
   font-size: 16px;
   font-weight: 400;
   line-height: 28px;
+  margin-bottom: 0;
 }
 .main .right a {
+  height: 23px;
+  line-height: 11px;
   transition: color .3s;
+  padding: 5px 13px;
+  background-color: #cc2431;
+  color: white;
+  font-family: Roboto;
+  font-size: 16px;
+  margin-left: 15px;
 }
 .main .right a:hover {
   color: white;
@@ -719,12 +732,19 @@ header .callbacks .question {
   line-height: 30px;
 }
 .about .text {
-  height: 250px;
-  overflow-y: scroll;
   direction: rtl;
   position: relative;
   left: -15px;
   padding-left: 15px;
+  /*&::-webkit-scrollbar-track {
+      background-color: #e3e3e3;
+    }
+    &::-webkit-scrollbar {
+      width: 2px;
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: @red;
+    }*/
 }
 .about .text p {
   font-family: Roboto;
@@ -732,15 +752,6 @@ header .callbacks .question {
   font-weight: 300;
   line-height: 28px;
   direction: ltr;
-}
-.about .text::-webkit-scrollbar-track {
-  background-color: #e3e3e3;
-}
-.about .text::-webkit-scrollbar {
-  width: 2px;
-}
-.about .text::-webkit-scrollbar-thumb {
-  background-color: #cc2431;
 }
 .about button {
   background-color: #cc2431;
@@ -824,100 +835,29 @@ header .callbacks .question {
   background: url('../images/access-background.png') no-repeat center;
   background-size: cover;
   color: white;
+  text-align: center;
 }
 .access .title {
-  margin-top: 130px;
+  margin-top: 0;
   line-height: 55px;
 }
-.access .form {
-  max-width: 390px;
-  margin-top: 40px;
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
+.access img {
+  margin: 20px auto 35px;
+  display: block;
 }
-.access .form .input {
-  position: relative;
-}
-.access .form .input:before {
-  content: '';
-  height: 14px;
-  width: 20px;
-  background-image: url('../images/mail-icon.png');
-  position: absolute;
-  left: 25px;
-  top: 25px;
-  cursor: text;
-  z-index: 2;
-}
-.access .form .input input {
-  width: 100%;
-  border-radius: 3px;
-  height: 62px;
-  font-family: Roboto;
-  font-size: 16px;
-  font-weight: 300;
-  text-indent: 60px;
-  color: #313131;
-  margin-bottom: 15px;
-}
-.access .form .input input::-webkit-input-placeholder {
-  color: #313131;
-}
-.access .form .input input::-moz-placeholder {
-  color: #313131;
-}
-.access .form .input input:-ms-input-placeholder {
-  color: #313131;
-}
-.access .form input[type=submit] {
-  height: 62px;
-  border-radius: 3px;
+.access .btn {
+  width: 388px;
+  padding-top: 20px;
+  padding-bottom: 20px;
   background-color: #cc2431;
-  font-family: Roboto;
-  font-size: 16px;
-  font-weight: 300;
-}
-.access .tablet-container {
-  position: relative;
-  text-align: center;
-}
-.access .tablet-text {
-  color: #484646;
-  max-width: 340px;
-  font-size: 12px;
-  position: absolute;
-  top: 80px;
-  left: 115px;
-  z-index: 1;
-  text-align: justify;
-  display: flex;
-  flex-direction: column;
-}
-.access .tablet-text .center {
-  text-align: center;
-  font-size: 13px;
-}
-.access .tablet {
-  width: 100%;
-  max-width: 451px;
-}
-.access a {
-  width: 200px;
-  border: 1px solid rgba(255, 255, 255, 0.25);
   border-radius: 3px;
-  font-size: 14px;
+  font-family: Roboto;
+  font-weight: 300;
+  font-size: 16px;
   text-transform: uppercase;
-  position: absolute;
-  top: 260px;
-  left: 0;
-  right: 0;
-  margin: 0 auto;
-  padding: 20px;
-  z-index: 2;
 }
-.access a img {
-  margin-right: 10px;
+.access .btn:hover {
+  color: white;
 }
 .bonus {
   padding: 120px 0 70px;
@@ -926,7 +866,8 @@ header .callbacks .question {
 .bonus .small {
   font-size: 16px;
   font-weight: 100;
-  margin-top: 20px;
+  margin-top: 40px;
+  margin-bottom: 80px;
 }
 .bonus .middle {
   font-size: 20px;
@@ -934,7 +875,6 @@ header .callbacks .question {
   line-height: 21px;
   text-transform: uppercase;
   margin-top: 40px;
-  margin-bottom: 80px;
 }
 .bonus .item {
   height: 510px;
@@ -1010,31 +950,21 @@ header .callbacks .question {
 .author .title {
   line-height: 55px;
 }
+.author .author-man {
+  display: none;
+  max-width: 320px;
+  width: 100%;
+}
 .author .text {
-  height: 250px;
-  overflow-y: scroll;
-  direction: rtl;
   position: relative;
-  left: -15px;
-  padding-left: 15px;
   color: #727070;
-  margin: 50px 0 40px;
+  margin: 15px 0 40px;
 }
 .author .text p {
   font-family: Roboto;
   font-size: 16px;
   font-weight: 300;
   line-height: 28px;
-  direction: ltr;
-}
-.author .text::-webkit-scrollbar-track {
-  background-color: #727070;
-}
-.author .text::-webkit-scrollbar {
-  width: 2px;
-}
-.author .text::-webkit-scrollbar-thumb {
-  background-color: #cc2431;
 }
 .author .buttons {
   display: flex;
@@ -1221,7 +1151,7 @@ header .callbacks .question {
 .thanks p {
   font-size: 18px;
   font-weight: 100;
-  line-height: 17px;
+  line-height: 24px;
   margin: 25px 0 35px;
 }
 .thanks .btn {
@@ -1324,6 +1254,17 @@ footer .logo,
 footer .btn {
   position: relative;
   z-index: 2;
+}
+.scroll-up {
+  background: url("../images/scroll-up.png") no-repeat center;
+  background-size: 100%;
+  width: 4vw;
+  height: 4vw;
+  position: fixed;
+  right: 3%;
+  bottom: 30px;
+  display: none;
+  cursor: pointer;
 }
 .modal .close {
   z-index: 2;
@@ -1572,6 +1513,9 @@ footer .btn {
   }
 }
 @media screen and (max-width: 991px) {
+  header {
+    position: relative !important;
+  }
   header .callbacks {
     flex-direction: row;
     float: right;
@@ -1652,6 +1596,10 @@ footer .btn {
   .author {
     background-image: url("../images/author-background-plain.png");
   }
+  .author .author-man {
+    display: block;
+    max-width: 400px;
+  }
   .testimonials {
     padding: 50px 0;
   }
@@ -1668,6 +1616,10 @@ footer .btn {
   footer .btn {
     font-size: 14px;
     padding: 15px 8px;
+  }
+  .scroll-up {
+    height: 50px;
+    width: 50px;
   }
   #modal-buy .modal-dialog {
     width: 95%;
@@ -1711,8 +1663,7 @@ footer .btn {
   }
   header {
     text-align: center;
-    /*position: relative;
-    background-color: #1e1d1d;*/
+    position: relative !important;
   }
   header .menu {
     display: none;
@@ -1816,16 +1767,8 @@ footer .btn {
     line-height: 45px;
     text-align: center;
   }
-  .access .form {
-    margin: 25px auto;
-  }
-  .access .tablet {
-    width: 230px;
-  }
-  .access a {
-    width: 170px;
-    padding: 20px 0px;
-    top: 130px;
+  .access .btn {
+    width: 270px;
   }
   .bonus {
     padding-top: 50px;
@@ -1866,6 +1809,9 @@ footer .btn {
   .author .title {
     font-size: 35px;
     line-height: 45px;
+  }
+  .author .author-man {
+    margin: 15px auto;
   }
   .author .middle {
     font-size: 20px;
