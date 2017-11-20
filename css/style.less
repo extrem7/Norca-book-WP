@@ -85,7 +85,7 @@ header {
   }
   .book {
     width: 100%;
-    max-width: image-width('../images/book.png');
+    max-width: 501px;
   }
   .content {
     padding-left: 40px;
@@ -160,17 +160,17 @@ header {
     p {
       color: white;
       font-size: 16px;
-      font-weight: 400;
+      font-weight: 100;
       line-height: 28px;
       margin-bottom: 0;
     }
     a {
       height: 23px;
       line-height: 11px;
-      transition: color .3s;
+      transition: all .2s;
       padding: 5px 13px;
-      background-color: @red;
-      color: white;
+      background-color: fade(white, 22%);
+      color: #442325;
       font-family: Roboto;
       font-size: 16px;
       margin-left: 15px;
@@ -362,8 +362,9 @@ header {
     font-weight: 300;
     font-size: 16px;
     text-transform: uppercase;
+    color: white !important;
     &:hover {
-      color: white;
+      color: white !important;
     }
   }
 }
@@ -444,7 +445,7 @@ header {
       background-color: @red;
       padding: 15px;
       border-radius: 3px;
-      color: white;
+      color: white !important;
       text-transform: uppercase;
     }
   }
@@ -455,6 +456,7 @@ header {
   background: url('../images/author-background.png') no-repeat center;
   background-size: cover;
   color: white;
+  position: relative;
   .title {
     line-height: 55px;
   }
@@ -463,9 +465,22 @@ header {
     max-width: 320px;
     width: 100%;
   }
+  .col-lg-6 {
+    z-index: 1;
+  }
+  .man {
+    display: block;
+    position: absolute;
+    right: -100px;
+    bottom: -60px;
+  }
+  .container {
+    z-index: 1;
+    position: relative;
+  }
   .text {
     position: relative;
-    color: #727070;
+    color: white;
     margin: 15px 0 40px;
     p {
       font-family: Roboto;
@@ -760,11 +775,14 @@ footer {
   background-size: 100%;
   width: 4vw;
   height: 4vw;
+  max-width: 77px;
+  max-height: 77px;
   position: fixed;
   right: 3%;
   bottom: 30px;
   display: none;
   cursor: pointer;
+  z-index: 2;
 }
 
 .modal .close {
@@ -776,7 +794,7 @@ footer {
   transition: all .3s;
 }
 
-#modal-ask, #modal-bonus {
+#modal-ask{
   .modal-body {
     padding: 85px 45px;
     background-color: white;
@@ -939,9 +957,23 @@ footer {
 }
 
 #modal-video {
+  .modal-content{
+    background-color: black;
+  }
   .modal-body {
-    padding: 45px;
+    padding: 0;
     background: black;
+  }
+}
+
+#modal-access, #modal-bonus {
+  .close {
+    right: 95px !important;
+  }
+  .modal-content {
+    background: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
   }
 }
 
@@ -1130,6 +1162,9 @@ footer {
       display: block;
       max-width: 400px;
     }
+    .man {
+      display: none;
+    }
   }
 
   .testimonials {
@@ -1228,7 +1263,10 @@ footer {
   }
 
   .main {
-    padding-top: 170px;
+    padding-top: 25px;
+    .book {
+      margin-left: -12%;
+    }
     .title {
       font-size: 35px;
       line-height: 45px;
@@ -1311,11 +1349,12 @@ footer {
   }
 
   .access {
-    padding: 35px 0 25px;
+    padding: 35px 0 35px;
     .title {
       font-size: 30px;
       line-height: 45px;
       text-align: center;
+      margin-top: 0;
     }
     .btn {
       width: 270px;
@@ -1380,6 +1419,9 @@ footer {
       flex-direction: column;
       .btn {
         margin-right: 0;
+      }
+      .video {
+        padding-top: 35px;
       }
     }
   }
@@ -1466,7 +1508,11 @@ footer {
     }
   }
 }
-
+@media (min-width: 768px) {
+  #modal-video .modal-dialog {
+    width: 800px;
+  }
+}
 @media screen and (max-width: 350px) {
   .access .title {
     font-size: 24px;

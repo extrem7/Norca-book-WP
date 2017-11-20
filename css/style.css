@@ -580,7 +580,7 @@ header .callbacks .question {
 }
 .main .book {
   width: 100%;
-  max-width: 402px;
+  max-width: 501px;
 }
 .main .content {
   padding-left: 40px;
@@ -659,17 +659,17 @@ header .callbacks .question {
 .main .right p {
   color: white;
   font-size: 16px;
-  font-weight: 400;
+  font-weight: 100;
   line-height: 28px;
   margin-bottom: 0;
 }
 .main .right a {
   height: 23px;
   line-height: 11px;
-  transition: color .3s;
+  transition: all .2s;
   padding: 5px 13px;
-  background-color: #cc2431;
-  color: white;
+  background-color: rgba(255, 255, 255, 0.22);
+  color: #442325;
   font-family: Roboto;
   font-size: 16px;
   margin-left: 15px;
@@ -855,9 +855,10 @@ header .callbacks .question {
   font-weight: 300;
   font-size: 16px;
   text-transform: uppercase;
+  color: white !important;
 }
 .access .btn:hover {
-  color: white;
+  color: white !important;
 }
 .bonus {
   padding: 120px 0 70px;
@@ -938,7 +939,7 @@ header .callbacks .question {
   background-color: #cc2431;
   padding: 15px;
   border-radius: 3px;
-  color: white;
+  color: white !important;
   text-transform: uppercase;
 }
 .author {
@@ -946,6 +947,7 @@ header .callbacks .question {
   background: url('../images/author-background.png') no-repeat center;
   background-size: cover;
   color: white;
+  position: relative;
 }
 .author .title {
   line-height: 55px;
@@ -955,9 +957,22 @@ header .callbacks .question {
   max-width: 320px;
   width: 100%;
 }
+.author .col-lg-6 {
+  z-index: 1;
+}
+.author .man {
+  display: block;
+  position: absolute;
+  right: -100px;
+  bottom: -60px;
+}
+.author .container {
+  z-index: 1;
+  position: relative;
+}
 .author .text {
   position: relative;
-  color: #727070;
+  color: white;
   margin: 15px 0 40px;
 }
 .author .text p {
@@ -1260,11 +1275,14 @@ footer .btn {
   background-size: 100%;
   width: 4vw;
   height: 4vw;
+  max-width: 77px;
+  max-height: 77px;
   position: fixed;
   right: 3%;
   bottom: 30px;
   display: none;
   cursor: pointer;
+  z-index: 2;
 }
 .modal .close {
   z-index: 2;
@@ -1274,34 +1292,27 @@ footer .btn {
   transform: scale(3);
   transition: all .3s;
 }
-#modal-ask .modal-body,
-#modal-bonus .modal-body {
+#modal-ask .modal-body {
   padding: 85px 45px;
   background-color: white;
   text-align: center;
 }
-#modal-ask .modal-body .title,
-#modal-bonus .modal-body .title {
+#modal-ask .modal-body .title {
   font-size: 40px;
 }
-#modal-ask .modal-body p,
-#modal-bonus .modal-body p {
+#modal-ask .modal-body p {
   font-family: Roboto;
   font-size: 16px;
   font-weight: 400;
   line-height: 26px;
 }
-#modal-ask .modal-body .form,
-#modal-bonus .modal-body .form {
+#modal-ask .modal-body .form {
   text-align: left;
   padding: 35px 50px 0;
 }
 #modal-ask .modal-body .form .name input,
-#modal-bonus .modal-body .form .name input,
 #modal-ask .modal-body .form .mail input,
-#modal-bonus .modal-body .form .mail input,
-#modal-ask .modal-body .form textarea,
-#modal-bonus .modal-body .form textarea {
+#modal-ask .modal-body .form textarea {
   border: 1px solid #dadada;
   border-radius: 3px;
   width: 100%;
@@ -1309,42 +1320,29 @@ footer .btn {
   color: #313131;
 }
 #modal-ask .modal-body .form .name input::-webkit-input-placeholder,
-#modal-bonus .modal-body .form .name input::-webkit-input-placeholder,
 #modal-ask .modal-body .form .mail input::-webkit-input-placeholder,
-#modal-bonus .modal-body .form .mail input::-webkit-input-placeholder,
-#modal-ask .modal-body .form textarea::-webkit-input-placeholder,
-#modal-bonus .modal-body .form textarea::-webkit-input-placeholder {
+#modal-ask .modal-body .form textarea::-webkit-input-placeholder {
   color: #6d6d6d;
 }
 #modal-ask .modal-body .form .name input::-moz-placeholder,
-#modal-bonus .modal-body .form .name input::-moz-placeholder,
 #modal-ask .modal-body .form .mail input::-moz-placeholder,
-#modal-bonus .modal-body .form .mail input::-moz-placeholder,
-#modal-ask .modal-body .form textarea::-moz-placeholder,
-#modal-bonus .modal-body .form textarea::-moz-placeholder {
+#modal-ask .modal-body .form textarea::-moz-placeholder {
   color: #6d6d6d;
 }
 #modal-ask .modal-body .form .name input:-ms-input-placeholder,
-#modal-bonus .modal-body .form .name input:-ms-input-placeholder,
 #modal-ask .modal-body .form .mail input:-ms-input-placeholder,
-#modal-bonus .modal-body .form .mail input:-ms-input-placeholder,
-#modal-ask .modal-body .form textarea:-ms-input-placeholder,
-#modal-bonus .modal-body .form textarea:-ms-input-placeholder {
+#modal-ask .modal-body .form textarea:-ms-input-placeholder {
   color: #6d6d6d;
 }
 #modal-ask .modal-body .form .name input,
-#modal-bonus .modal-body .form .name input,
-#modal-ask .modal-body .form .mail input,
-#modal-bonus .modal-body .form .mail input {
+#modal-ask .modal-body .form .mail input {
   height: 64px;
   margin-bottom: 8px;
 }
-#modal-ask .modal-body .form .name,
-#modal-bonus .modal-body .form .name {
+#modal-ask .modal-body .form .name {
   position: relative;
 }
-#modal-ask .modal-body .form .name:before,
-#modal-bonus .modal-body .form .name:before {
+#modal-ask .modal-body .form .name:before {
   content: '';
   height: 17px;
   width: 17px;
@@ -1355,12 +1353,10 @@ footer .btn {
   cursor: text;
   z-index: 2;
 }
-#modal-ask .modal-body .form .mail,
-#modal-bonus .modal-body .form .mail {
+#modal-ask .modal-body .form .mail {
   position: relative;
 }
-#modal-ask .modal-body .form .mail:before,
-#modal-bonus .modal-body .form .mail:before {
+#modal-ask .modal-body .form .mail:before {
   content: '';
   height: 15px;
   width: 21px;
@@ -1371,16 +1367,14 @@ footer .btn {
   cursor: text;
   z-index: 2;
 }
-#modal-ask .modal-body .form textarea,
-#modal-bonus .modal-body .form textarea {
+#modal-ask .modal-body .form textarea {
   height: 146px;
   resize: none;
   margin-bottom: 15px;
   padding-top: 15px;
   text-indent: 20px;
 }
-#modal-ask .modal-body .form input[type=submit],
-#modal-bonus .modal-body .form input[type=submit] {
+#modal-ask .modal-body .form input[type=submit] {
   height: 62px;
   width: 100%;
   background-color: #cc2431;
@@ -1455,9 +1449,22 @@ footer .btn {
 #modal-buy a img {
   margin-right: 13px;
 }
+#modal-video .modal-content {
+  background-color: black;
+}
 #modal-video .modal-body {
-  padding: 45px;
+  padding: 0;
   background: black;
+}
+#modal-access .close,
+#modal-bonus .close {
+  right: 95px !important;
+}
+#modal-access .modal-content,
+#modal-bonus .modal-content {
+  background: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
 }
 @media screen and (max-width: 1200px) {
   header .callbacks {
@@ -1600,6 +1607,9 @@ footer .btn {
     display: block;
     max-width: 400px;
   }
+  .author .man {
+    display: none;
+  }
   .testimonials {
     padding: 50px 0;
   }
@@ -1681,7 +1691,10 @@ footer .btn {
     min-width: 200px;
   }
   .main {
-    padding-top: 170px;
+    padding-top: 25px;
+  }
+  .main .book {
+    margin-left: -12%;
   }
   .main .title {
     font-size: 35px;
@@ -1760,12 +1773,13 @@ footer .btn {
     margin-top: 25px;
   }
   .access {
-    padding: 35px 0 25px;
+    padding: 35px 0 35px;
   }
   .access .title {
     font-size: 30px;
     line-height: 45px;
     text-align: center;
+    margin-top: 0;
   }
   .access .btn {
     width: 270px;
@@ -1825,6 +1839,9 @@ footer .btn {
   }
   .author .buttons .btn {
     margin-right: 0;
+  }
+  .author .buttons .video {
+    padding-top: 35px;
   }
   .order-many {
     padding: 35px 0;
@@ -1898,6 +1915,11 @@ footer .btn {
   }
   #modal-buy .modal-content .col-md-3 {
     display: inline-block;
+  }
+}
+@media (min-width: 768px) {
+  #modal-video .modal-dialog {
+    width: 800px;
   }
 }
 @media screen and (max-width: 350px) {

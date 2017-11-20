@@ -32,7 +32,7 @@ function create_testimonials() {
 		),
 		'public'          => true,
 		'menu_position'   => 5,
-		'supports'        => array( 'title', 'excerpt', 'custom-fields', 'page-attributes' ),
+		'supports'        => array( 'title', 'custom-fields', 'page-attributes' ),
 		'taxonomies'      => array( 'category' ),
 		'has_archive'     => true,
 		'capability_type' => 'post',

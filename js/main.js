@@ -158,6 +158,13 @@ $(function () {
         $(modal).attr('src', ' ');
         $(modal).attr('src', src);
     });
+    $('.sp-button-container ').click(function () {
+        setTimeout(function () {
+            if($('.sp-message-success').length >= 1){
+                location.href = thanks;
+            }
+        },3000);
+    })
     $(window).on('wpcf7:mailsent', function (e) {
         location.href = thanks;
     });
